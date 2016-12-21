@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+  <h3 class="text-center">Databases</h3>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <table class="table">
+        <thead>
+          <th>Database</th>
+          <th>Description</th>
+          <th>Link to Tables</th>
+        </thead>
+        <tbody>
+          <% @databases.each do |db| %>
+            <tr>
+              <td><%= db.name %></td>
+              <td><%= db.description %></td>
+              <td><%= link_to db.name, database_tables_path(db.id), :'data-toggle' => "tooltip", :'data-placement' => 'top', :'title' => "Click to see #{db.name} tables"  %></td>
+            </tr>
+          <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <h5 class="text-center"><%= link_to "Add A Database", new_database_path, :class => "btn btn-primary btn-sm" %></h5>
+  </div>
+</div>

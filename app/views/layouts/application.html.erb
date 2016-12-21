@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SqlBuilder</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h6 class="text-center"><%= link_to "Home", root_path %> | <%= link_to "Databases", databases_path %> | <%= link_to "Tables", tables_superlist_path %></h6>
+    <%= yield %>
+    <div style="position:fixed; bottom:0px;">
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
+</html>

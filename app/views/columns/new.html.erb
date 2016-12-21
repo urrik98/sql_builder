@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <h4 class="text-center">New column for <%= @database.name %>.<%= @table.name %></h4>
+  </div>
+  <br>
+  <%= form_for([@database, @table, @column]) do |f| %>
+    <div class="row">
+      <%= f.label :name, :class => "col-sm-1 col-sm-offset-2"  %>
+      <%= f.text_field :name, :class => "col-sm-6" %>
+    </div>
+    <br>
+    <div class="row">
+      <%= f.label :datatype, :class => "col-sm-1 col-sm-offset-2"  %>
+      <%= f.text_field :datatype, :class => "col-sm-6" %>
+    </div>
+    <br>
+    <div class="row">
+      <%= f.submit "Add Column", :class => "col-sm-2 col-sm-offset-5 btn btn-primary btn-sm" %>
+    </div>
+  <% end %>
+</div>

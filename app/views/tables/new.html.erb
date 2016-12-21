@@ -1,0 +1,19 @@
+<div class="container">
+  <%= form_for([@database, @table]) do |f| %>
+    <div class="row">
+      <%= f.label :name, :class => "col-sm-1 col-sm-offset-2" %>
+      <%= f.text_field :name, :class => "col-sm-3" %>
+      <%= f.label :tabletype, :class => "col-sm-1" %>
+      <%= f.text_field :tabletype, :class => "col-sm-2" %>
+    </div>
+    <div class="row">
+      <%= f.label :description, :class => "col-sm-1 col-sm-offset-2" %>
+      <%= f.text_field :description, :class => "col-sm-6" %>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+      <%= f.submit "Add Table", :class => "col-sm-2 col-sm-offset-5" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+  <h3 class="text-center"><%= @database.name %> Tables</h3>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <table class="table">
+        <thead>
+          <th>Table</th>
+          <th>Type</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+          <% @tables.each do |t| %>
+            <tr>
+              <td><%= link_to t.name, database_table_path(@database.id, t.id), :'data-toggle' => "tooltip", :'data-placement' => 'top', :'title' => "Click to see #{t.name} columns" %></td>
+              <td><%= t.tabletype %></td>
+              <td><%= t.description %></td>
+            </tr>
+          <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <h5 class="text-center"><%= link_to "Add A Table", new_database_table_path(@database.id) %></h5>
+  </div>
+</div>
